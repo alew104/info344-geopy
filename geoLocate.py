@@ -1,4 +1,5 @@
 import csv
+import geopy
 
 def openCSV(fileName):
     with open('addresses.csv', 'r') as infile:
