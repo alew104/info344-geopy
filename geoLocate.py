@@ -4,8 +4,8 @@ fileName = raw_input("Enter new filename")
 openCSV(fileName)
 
 def openCSV(fileName):
-    with open('addresses.csv') as infile
-        with open(fileName + '.csv') as outfile
+    with open('addresses.csv') as infile:
+        with open(fileName + '.csv') as outfile:
         dreader = csv.DictReader(infile)
         for row in dreader:
             print(row)
