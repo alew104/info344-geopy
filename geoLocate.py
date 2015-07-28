@@ -1,8 +1,8 @@
 import csv
 
 def openCSV(fileName):
-    with open('addresses.csv') as infile:
-        with open(fileName + '.csv') as outfile:
+    with open('addresses.csv', 'r') as infile:
+        with open(fileName + '.csv', 'w') as outfile:
             reader = csv.DictReader(infile)
             fnames = reader.fieldnames + ['latitude', 'longitude', 'county']
             print(fnames)
