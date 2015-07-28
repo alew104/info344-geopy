@@ -26,7 +26,7 @@ def openCSV(fileName):
                                 'city' : city,
                                 'state' : state,
                                 'zip' : zipcode,
-                                'latitude' : lat
+                                'latitude' : lat,
                                 'longitude' : lng,
                                 'county' : county
                                 })
