@@ -6,7 +6,7 @@ def openCSV(fileName):
             reader = csv.DictReader(infile)
             fnames = reader.fieldnames + ['latitude', 'longitude', 'county']
             print(fnames)
-            write = csv.DictWriter(outfile, fnames = fnames)
+            write = csv.DictWriter(outfile, fieldnames = fnames)
             write.writeheader(fnames)
             print('wrote header')
             for row in reader:
