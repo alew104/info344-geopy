@@ -27,7 +27,7 @@ def openCSV(fileName):
 
 def findLocate(fullAddress):
     from geopy.geocoders import Bing
-    geolocator = Bing(api_key = 'AiLKeLoEcoIYjSYqbfCmHPTzpMa2m_UWqGuNehGs-Kf6xRKo3Yl0t4HKm2CEAcrA')
+    geocoder = Bing(api_key = 'AiLKeLoEcoIYjSYqbfCmHPTzpMa2m_UWqGuNehGs-Kf6xRKo3Yl0t4HKm2CEAcrA')
     loc = geocoder.geocode(fullAddress)
     print(loc.raw)
 
