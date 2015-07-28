@@ -17,7 +17,7 @@ def openCSV(fileName):
                 zipcode = row['zip']
                 fullAddress = address + ' ' + city + ' ' + state + ' ' + zipcode
                 from geopy.geocoders import Bing
-                geocoder = Bing(api_key = 'AiLKeLoEcoIYjSYqbfCmHPTzpMa2m_UWqGuNehGs-Kf6xRKo3Yl0t4HKm2CEAcrA')
+                geocoder = Bing(api_key = '')
                 loc = geocoder.geocode(fullAddress)
                 county = loc.raw['address']['adminDistrict2']
                 lat = loc.latitude
