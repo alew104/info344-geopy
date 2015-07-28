@@ -6,8 +6,8 @@ openCSV(fileName)
 def openCSV(fileName):
     with open('addresses.csv') as infile:
         with open(fileName + '.csv') as outfile:
-        dreader = csv.DictReader(infile)
-        for row in dreader:
+        reader = csv.DictReader(infile)
+        for row in reader:
             print(row)
 
         #findLocate()
