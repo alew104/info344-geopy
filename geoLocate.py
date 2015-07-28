@@ -21,4 +21,5 @@ def findLocate():
 
 
 fileName = raw_input("Enter new filename: ")
+open(fileName + '.csv', 'w')
 openCSV(fileName)
