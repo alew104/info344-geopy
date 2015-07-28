@@ -16,20 +16,24 @@ def openCSV(fileName):
                 state = row['state']
                 zipcode = row['zip']
                 fullAddress = address + ' ' + city + ' ' + state + ' ' + zipcode
-                print(fullAddress)
-                findLocate(fullAddress)
+                from geopy.geocoders import Bing
+                geocoder = Bing(api_key = 'AiLKeLoEcoIYjSYqbfCmHPTzpMa2m_UWqGuNehGs-Kf6xRKo3Yl0t4HKm2CEAcrA')
+                loc = geocoder.geocode(fullAddress)
+                county = loc.raw['address']['adminDistrict2']
+                lat = loc.latitude
+                lng = loc.longitude
+                write.writerow({'address' : address,
+                                'city' : city,
+                                'state' : state,
+                                'zip' : zipcode,
+                                'latitude' : lat
+                                'longitude' : lng,
+                                'county' : county
+                                })
 
-        #findLocate()
-        #dwrite = csv.DictWriter(outfile)
 
 
 
-
-def findLocate(fullAddress):
-    from geopy.geocoders import Bing
-    geocoder = Bing(api_key = 'AiLKeLoEcoIYjSYqbfCmHPTzpMa2m_UWqGuNehGs-Kf6xRKo3Yl0t4HKm2CEAcrA')
-    loc = geocoder.geocode(fullAddress)
-    print(loc.raw)
 
 
 
@@ -37,3 +41,4 @@ def findLocate(fullAddress):
 fileName = raw_input("Enter new filename: ")
 open(fileName + '.csv', 'w')
 openCSV(fileName)
+print('finished, check file')
